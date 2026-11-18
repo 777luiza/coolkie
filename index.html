@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="Author" name="Luiza Souza & Davi Silva"/>
+  <title>Coolkie</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&amp;family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,800&amp;display=swap" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+ </head>
+
+ <body>
+
+  <svg aria-hidden="true" focusable="false" height="0" style="position:absolute" width="0">
+   <defs>
+     <filter height="120%" id="ck-rough" width="120%" x="-10%" y="-10%">
+     <feturbulence basefrequency="0.07" numoctaves="2" result="n" seed="4" type="fractalNoise"></feturbulence>
+     <fedisplacementmap in="SourceGraphic" in2="n" scale="6" xchannelselector="R" ychannelselector="G"></fedisplacementmap>
+    </filter>
+    <filter height="140%" id="ck-blur" width="140%" x="-20%" y="-20%">
+     <fegaussianblur stddeviation="3">
+     </fegaussianblur>
+    </filter>
+    <radialgradient cx=".5" cy=".5" id="ck-shade" r=".5">
+     <stop offset=".55" stop-color="#000" stop-opacity="0"></stop>
+     <stop offset="1" stop-color="#000" stop-opacity=".4"></stop>
+    </radialgradient>
+    <radialgradient cx=".5" cy=".5" id="ck-light" r=".5">
+     <stop offset="0" stop-color="#fff" stop-opacity=".45"></stop>
+     <stop offset="1" stop-color="#fff" stop-opacity="0"></stop>
+    </radialgradient>
+   </defs>
+  </svg>
+
+  <div class="wrap">
+   <header class="nav" id="nav">
+    <a class="logo" href="#"><span style="display:block"></span><img class="logoimg" src="coolkielogo.png" alt=""></a>
+    <nav aria-label="Se&ccedil;&otilde;es" class="links">
+
+     <a href="#sabores">
+      Flavors
+     </a>
+     <a href="#como">
+      How It Works
+     </a>
+     <a href="#monte">
+      Build A Box
+     </a>
+
+    </nav>
+
+    <div class="nav-right">
+
+     <a class="pill solid" href="#monte" id="box-btn">
+      <span class="mini" id="mini-cookie"></span>
+      <span class="lbl"> Box </span>
+      <span class="num" id="box-count"> 0/6 </span>
+     </a>
+     <a aria-label="Carrinho" class="pill line" href="cart.html" id="cart-link">
+      <svg aria-hidden="true" class="ic" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+        <path d="M5 8h14l-1.2 12H6.2L5 8z"></path>
+        <path d="M9 8V7a3 3 0 016 0v1"></path>
+      </svg>
+      <span class="cnt num" id="cart-cnt"> 0 </span>
+     </a>
+
+    <a class="pill line" href="signin.html" id="acct-link">
+      
+      <svg aria-hidden="true" class="ic" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+      <circle cx="12" cy="8" r="4"></circle> 
+      <path d="M4 21c1-4 4-6 8-6s7 2 8 6"></path>
+      </svg>
+      <span class="lbl" id="acct-lbl"> Sign In </span>
+    </a>
+    </div>
+    <span class="progress" id="progress"></span>
+   </header>
+   <!-- ========== INÍCIO ========== -->
+
+   <main class="view" id="view-home">
+    <section class="hero" id="hero">
+
+     <div>
+     <h1 class="rise"> Keep it <em>cool</em> with <em>Coolkie</em> </h1>
+     <p class="lead rise" style="animation-delay:.12s">
+     Monte uma caixa com os sabores da semana ou leve cookies na unidade. O pedido sai pronto para o WhatsApp.</p>
+
+      <div class="actions rise" style="animation-delay:.24s">
+       <a class="pill solid" href="#monte">
+        Build My Box
+       </a>
+      </div>
+     </div>
+
+     <div aria-hidden="true" class="hero-art" id="hero-art">
+      <div class="layer m1">
+       <div class="f" id="m1">
+       </div>
+      </div>
+
+      <div class="layer m2">
+       <div class="f" id="m2">
+       </div>
+      </div>
+
+      <div class="layer m3">
+       <div class="f" id="m3">
+       </div>
+      </div>
+
+      <div class="layer main spin" id="hero-main">
+      </div>
+     </div>
+
+    </section>
+
+    <div aria-hidden="true" class="ticker">
+     <div class="track" id="ticker">
+     </div>
+    </div>
+    <section class="showcase" id="sabores">
+     <div class="sec-head" data-reveal="">
+      <div>
+       <h2>
+        Week's
+        <em>
+        Flavors
+        </em>
+       </h2>
+       <p id="show-sub">
+       Choose a flavor to add to your box.
+       </p>
+      </div>
+     </div>
+
+     <div class="tiles" id="tiles">
+
+     <article class="tile" style="--c: #fffff">
+       <div class="art">
+           <img src="cookie-oreo.png" alt="Cookie tradicional">
+       </div>
+       <h3>Cookies & Creams Cookie</h3>
+       <p class="desc">
+          Chocolate cookie pieces with creamy white chocolate.
+       </p>
+       <button class="pill solid" type="button">
+           Add to Box
+       </button>
+
+     </article>
+
+      <article class="tile" style="--c: #fffff">
+       <div class="art">
+           <img src="cookie-tiramisu.png" alt="">
+       </div>
+       <h3>Tiramisú Cookie</h3>
+       <p class="desc">
+           Coffe cookie with creamy mascarpone and cocoa.
+       </p>
+       <button class="pill solid" type="button">
+           Add to Box
+       </button>
+
+     </article>
+
+      <article class="tile" style="--c: #fffff">
+       <div class="art">
+           <img src="cookie-peanut.avif" alt="">
+       </div>
+       <h3>Peanut Butter Cookie</h3>
+       <p class="desc">
+           Soft cookie packed with rich peanut butter.
+       </p>
+       <button class="pill solid" type="button">
+           Add to Box
+       </button>
+
+     </article>
+
+      <article class="tile" style="--c: #fffff">
+       <div class="art">
+           <img src="cookie-churros.png" alt="">
+       </div>
+       <h3>Churros Cookie</h3>
+       <p class="desc">
+           Cinnamon sugar cookie filled with dulce de leche.
+       </p>
+       <button class="pill solid" type="button">
+           Add to Box
+       </button>
+
+     </article>
+      <article class="tile" style="--c: #fffff">
+       <div class="art">
+           <img src="cookie-trad.avif" alt="Cookie tradicional">
+       </div>
+       <h3>Chocolate Chip Cookie</h3>
+       <p class="desc">
+           Buttery cookie loaded with chocolate chunks.
+       </p>
+       <button class="pill solid" type="button">
+            Add to Box
+       </button>
+
+     </article>
+
+      <article class="tile" style="--c: #fffff">
+       <div class="art">
+           <img src="cookie-straw.png" alt="">
+       </div>
+       <h3>Strawberry Cheesecake Cookie</h3>
+       <p class="desc">
+           Creamy cheesecake filling with sweet strawberries.
+       </p>
+       <button class="pill solid" type="button">
+           Add to Box 
+       </button>
+
+     </article>
+
+      <article class="tile" style="--c: #fffff">
+       <div class="art">
+           <img src="cookie-frozenhot.png" alt="">
+       </div>
+       <h3>Frozen Hot Cookie</h3>
+       <p class="desc">
+          Warm chocolate cookie topped with marshmallows.
+       </p>
+       <button class="pill solid" type="button">
+            Add to Box
+       </button>
+      </article>
+
+     <article class="tile" style="--c: #fffff">
+        <div class="art">
+            <img src="cookie-redvelvet.png" alt="">
+        </div>
+        <h3>Red Velvet Cookie</h3>
+        <p class="desc">
+            Soft red velvet cookie with white chocolate chunks.
+        </p>
+        <button class="pill solid" type="button">
+            Add To Box
+        </button>
+     </article>
+
+     </div>
+    </section>
+
+    <section class="how" id="como">
+     <h2 class="section-title" data-reveal="">How <em> It Works</em></h2>
+     <div class="steps">
+     <div class="step" data-reveal="">
+       <div class="n"> 1 </div>
+       <h3> Choose How to Buy </h3>
+       <p > Boxes of 2, 4, 6 or 12 cookies. </p>
+      </div>
+
+      <div class="step" data-reveal="">
+       <div class="n"> 2 </div>
+       <h3> Mix The Flavors </h3>
+       <p> Cada lugar da caixa pode ter um sabor diferente. Voc&ecirc; v&ecirc; a caixa se enchendo na hora.</p>
+      </div>
+
+      <div class="step" data-reveal="">
+       <div class="n"> 3 </div>
+       <h3> Envie o pedido </h3>
+       <p> No carrinho, a mensagem sai pronta com sabores, total e forma de receber. </p>
+      </div>
+
+     </div>
+    </section>
+
+    <section class="builder" id="monte">
+     <div data-reveal="">
+
+      <h2 class="section-title"> Build Your <em> Box </em> </h2>
+      <p class="sub"> Misture sabores &agrave; vontade. A caixa s&oacute; fecha quando todos os lugares estiverem preenchidos. Prefere levar s&oacute; alguns?</p>
+     </div>
+
+     <div class="cols" data-reveal="">
+      <div>
+       <div class="stepname">
+        <span> 1. Sizes </span>
+       </div>
+
+       <div class="sizes" id="sizes"></div>
+       <div class="stepname">
+        <span> 2. Flavors </span>
+        <span class="num" id="count-label"></span>
+       </div>
+       <div class="flavors" id="flavors"></div>
+      </div>
+
+      <aside aria-label="Sua caixa" class="panel">
+       <h3 id="panel-title">
+        Your Box
+       </h3>
+
+       <div aria-hidden="true" class="bar">
+        <i id="bar-fill"></i>
+       </div>
+
+       <div class="slots" id="slots"></div>
+       <p class="status num" id="status"></p>
+       <button class="primary" id="add-box" type="button"> Add To Cart </button>
+       <button class="ghost" id="clear-box" type="button"> Limpar escolhas </button>
+       <a class="to-cart" href="#carrinho" id="panel-cart"> Ver carrinho </a>
+      </aside>
+     </div>
+    </section>
+   </main>
+  <script src="script.js"></script>
+  <script src="coolkie.js"></script>
+ </body>
+</html>
